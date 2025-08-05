@@ -1,0 +1,133 @@
+{
+    "info": {
+        "name": "Fleet Management API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create Vehicle",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"vehicleNumber\": \"MH12AB1234\",\n    \"model\": \"Tata Nexon\",\n    \"year\": 2022\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/vehicles",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "vehicles"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get All Vehicles",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/vehicles",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "vehicles"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Send Telemetry (Replace ID)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"speed\": 130,\n    \"fuelLevel\": 10,\n    \"engineTemp\": 120\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/vehicles/{{vehicle_id}}/telemetry",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "vehicles",
+                        "{{vehicle_id}}",
+                        "telemetry"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Alerts",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/alerts",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "alerts"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Fleet Summary",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/fleet",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "fleet"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Delete Vehicle (Replace ID)",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:3000/vehicles/{{vehicle_id}}",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "vehicles",
+                        "{{vehicle_id}}"
+                    ]
+                }
+            }
+        }
+    ]
+}
